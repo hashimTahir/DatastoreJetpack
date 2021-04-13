@@ -4,4 +4,5 @@
 
 <resources>
     <string name="app_name">DataStore</string>
+    <string name="priority_value">Priority %s</string>
 </resources>
