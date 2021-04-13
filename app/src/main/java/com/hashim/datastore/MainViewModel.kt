@@ -10,6 +10,17 @@ import androidx.lifecycle.AndroidViewModel
 class MainViewModel(
     application: Application
 ) : AndroidViewModel(application) {
+    fun hShowComletedTasks(checked: Boolean) {
+        TODO("Not yet implemented")
+    }
+
+    fun hEnableDisableDeadline(checked: Boolean) {
+        TODO("Not yet implemented")
+    }
+
+    fun hSortByPririoty(checked: Boolean) {
+        TODO("Not yet implemented")
+    }
 
 
 }
