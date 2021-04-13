@@ -1,0 +1,6 @@
+/*
+ * Copyright (c) 2021/  4/ 13.  Created by Hashim Tahir
+ */
+
+include ':app'
+rootProject.name = "DataStore"
