@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.hashim.datastore.databinding.TaskViewItemBinding
+import com.hashim.datastore.models.Task
+import com.hashim.datastore.ui.TaskViewHolder
 
 
 class TasksAdapter : ListAdapter<Task, TaskViewHolder>(TASKS_COMPARATOR) {

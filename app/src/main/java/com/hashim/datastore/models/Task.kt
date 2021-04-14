@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2021/  4/ 13.  Created by Hashim Tahir
+ * Copyright (c) 2021/  4/ 14.  Created by Hashim Tahir
  */
 
-package com.hashim.datastore
+package com.hashim.datastore.models
 
 import java.util.*
 

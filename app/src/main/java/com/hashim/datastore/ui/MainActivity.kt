@@ -1,14 +1,17 @@
 /*
- * Copyright (c) 2021/  4/ 13.  Created by Hashim Tahir
+ * Copyright (c) 2021/  4/ 14.  Created by Hashim Tahir
  */
 
-package com.hashim.datastore
+package com.hashim.datastore.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.hashim.datastore.TasksAdapter
 import com.hashim.datastore.databinding.ActivityMainBinding
+import com.hashim.datastore.models.SortOrder
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +32,16 @@ class MainActivity : AppCompatActivity() {
         hSetupListeners()
 
 
+
+        hTaskViewModel.hUiLD.observe(this) {
+
+            hTaskAdapter.submitList(it.hTaskList)
+
+            hActivityMainBinding.hSortChip.isChecked =
+                it.hSortOrder == SortOrder.BY_DEADLINE || it.hSortOrder == SortOrder.BY_DEADLINE_AND_PRIORITY
+            hActivityMainBinding.hDeadLineChip.isChecked =
+                it.hSortOrder == SortOrder.BY_PRIORITY || it.hSortOrder == SortOrder.BY_DEADLINE_AND_PRIORITY
+        }
     }
 
     private fun hSetupListeners() {
@@ -37,10 +50,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         hActivityMainBinding.hDeadLineChip.setOnCheckedChangeListener { _, checked ->
-            hTaskViewModel.hEnableDisableDeadline(checked)
+            Timber.d("Dead Lind chip")
+            if (hActivityMainBinding.hDeadLineChip.isPressed) {
+                hTaskViewModel.hEnableDisableDeadline(checked)
+            }
         }
         hActivityMainBinding.hSortChip.setOnCheckedChangeListener { _, checked ->
-            hTaskViewModel.hSortByPririoty(checked)
+            if (hActivityMainBinding.hSortChip.isPressed) {
+                hTaskViewModel.hSortByPririoty(checked)
+            }
         }
     }
 

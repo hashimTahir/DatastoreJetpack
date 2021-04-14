@@ -1,12 +1,14 @@
 /*
- * Copyright (c) 2021/  4/ 13.  Created by Hashim Tahir
+ * Copyright (c) 2021/  4/ 14.  Created by Hashim Tahir
  */
 
-package com.hashim.datastore
+package com.hashim.datastore.ui
 
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.hashim.datastore.TaskPriority.*
+import com.hashim.datastore.R
+import com.hashim.datastore.models.Task
+import com.hashim.datastore.models.TaskPriority.*
 import com.hashim.datastore.databinding.TaskViewItemBinding
 import java.text.SimpleDateFormat
 import java.util.*
